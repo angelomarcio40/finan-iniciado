@@ -1,7 +1,7 @@
 <?php
     session_start();
 include './painel/conexao/conexao.php';
-// Include './painel/scripot/passowr.php';
+Include './painel/script/password.php';
 
 $mail = $_POST['mail'];
 $password = $_POST['password']; // client
@@ -18,8 +18,8 @@ $passwordEnc = sha1($password); //encriptando password client
 if($passwordEnc == $passwordBase) {
 
     $_SESSION['mailx'] = $mail;
-    header('Location: ../index.php?msg-3');
+    header('Location: ./index.php');
 } else {
-    header('Location: index.php?msg-2');
+    header('Location: index.php?msg2');
 }
 ?>
