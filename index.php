@@ -1,4 +1,4 @@
-<html lang="pt-br">
+<html lang="en">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -28,21 +28,24 @@
 
         <form action="index1.php" method="post">
           <?php
-
           if(isset($_GET['msg'])) {
             $msg = $_GET['msg'];
-            if($msg == 1){?>
-            <div class="alert alert-info" role="açert">
-            Cadastrado com Sucesso!
+            if($msg ==1){?>
+            <div class="altert alert-info" role="alert"> 
+              Cadastrado com Sucesso!
             </div>
 
-            <?php } else { ?>
-       
+            <?php } else {?>
+
               <div class="alert alert-danger" role="alert">
-             Senha errada/Este e-mail não está cadastrado
-            </div>
-          
-            <?php } } ?>
+              Senha incorreta/este e-mail não está cadastrado
+              </div>
+
+        <?php 
+            }
+          }
+          ?>
+   
           <div class="form-group">
             <label for="exampleInputEmail1" id="cor">E-Mail</label>
             <input type="email" class="form-control" name="mail" id="exampleInputEmail1" aria-describedby="emailHelp">

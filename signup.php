@@ -54,27 +54,21 @@
 
 </div>
 
-
-
-
-
-
-
-
 </body>
 </html>
+
 <script type="text/javascript">
   var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password")
+  , confirm_password = document.getElementById("confirm_password");
 
   function validatePassword(){
-    if(password.value != confirm_password.value.setCustomValidity)
-    {
-
-    } else {confirm_password.setCustomValidity('');
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("senhas diferentes");
+    } else {
+      confirm_password.setCustomValidity('');
     }
   }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
 </script>
