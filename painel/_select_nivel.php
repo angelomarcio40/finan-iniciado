@@ -9,6 +9,7 @@ if(!isset($_SESSION['mailx'])) {
 
 
 include 'conexao/conexao.php';
+
 $sql = "select * from usuario where mail = '$mailHeader'";
 $search = mysqli_query($conexao,$sql);
 $array = mysqli_fetch_array($search);
