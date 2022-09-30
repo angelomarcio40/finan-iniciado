@@ -41,14 +41,35 @@
 											</tr>
 										</thead>
 										<tbody>
+											<?php
+
+											include 'conexao/conexao.php';
+											$data1 =$_POST['data1'];
+											$data2 = $_POST['data2'];
+
+											$sql = "SELECT * FROM payment where dateend between 'data1' and 'data2' and status = 'Pendente' order by dateend";
+											$search = mysqli_query($conexao,$sql);
+
+											while($array = mysqli_fetch_array($search)) {
+												$id = $array['id'];
+
+												$code = $array['code'];
+												$payment= $array['payment'];
+												$dateend = $array['dateend'];
+												$status = $array['status'];
+												$obs = $array['obs'];
+
+
+
+												?>
 											
 												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td><a role="button" href="" class="btn btn-primary" title="Details" target='_blank'><i class="fas fa-eye"></i></a></td>
+													<td><?php echo $code ?></td>
+													<td><?php echo $dateend ?></td>
+													<td><?php echo $payment ?></td>
+													<td><?php echo $status ?></td>
+													<td><?php echo $obs?></td>
+													<td><a role="button" href="project_details.php?code=<?php echo $code ?>" class="btn btn-primary" title="Details" target='_blank'><i class="fas fa-eye"></i></a></td>
 
 
 
@@ -57,6 +78,8 @@
 
 
 												</tr>
+
+											<?php } ?>
 
 					
 
